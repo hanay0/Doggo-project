@@ -1,0 +1,14 @@
+
+.doggos{
+    background-color:coral;
+    padding:0 10%
+}
+/*margin for the button*/
+.add-doggo-pic{
+    margin:5px;
+}
+
+/*class to be added to the image to give it a little margin*/
+.little-space{
+    margin:5px;
+}
