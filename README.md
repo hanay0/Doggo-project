@@ -1,2 +1,2 @@
 # Doggo-project
-Presents dogs with breeds
+Presents dogs images according to breeds.
