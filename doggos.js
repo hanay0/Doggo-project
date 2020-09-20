@@ -75,13 +75,20 @@ select.addEventListener('change', event =>{
 
 /* first , we will create an element image */
 const breedImage = document.querySelector('.dog-img');
+/* selecting spinner div which has the animation emoji */
+const spinner = document.querySelector('.spinner');
 
 function getDoggo(url){
+    /* show spinner before showing the image */
+    spinner.classList.add('show');
+    breedImage.classList.remove('show');
     fetch(url)
-    .then(data => {
-        return data.json();
+    .then(response => {
+        return response.json();
     })
     .then(data => {
         breedImage.src = data.message;
+        spinner.classList.remove('show');
+        breedImage.classList.add('show');
     })
 }

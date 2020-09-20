@@ -1,14 +1,20 @@
 
-.doggos{
-    background-color:coral;
-    padding:0 10%
-}
-/*margin for the button*/
-.add-doggo-pic{
-    margin:5px;
+@keyframes spin{
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-/*class to be added to the image to give it a little margin*/
-.little-space{
-    margin:5px;
+.spinner{
+    font-size:50px;
+    text-align:center;
+    animation:2s spin linear 2;
+    display: none;
+}
+
+.dog-img{
+    display:none;
+}
+.show{
+    display: block;
 }
