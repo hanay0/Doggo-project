@@ -42,6 +42,7 @@ newDoggo.addEventListener('click', addDoggo); */
 const BREEDS_URL = 'https://dog.ceo/api/breeds/list/all';
 /*selecting 'select' element form html DOM*/
 const select = document.querySelector('.breeds');
+let doggosWrapper = document.querySelector('.doggos');
 
 fetch(BREEDS_URL).then(response => {
     return response.json();
@@ -64,6 +65,23 @@ fetch(BREEDS_URL).then(response => {
 
 /* setting an event for changing in select element */
 select.addEventListener('change', event =>{
-    console.log(event.target.value);
-    console.log(`https://dog.ceo/api/breed/${event.target.value}/images/random`);
+    let url =`https://dog.ceo/api/breed/${event.target.value}/images/random`;
+
+    getDoggo(url);
 });
+
+
+/* start fetching url of the image */
+
+/* first , we will create an element image */
+const breedImage = document.querySelector('.dog-img');
+
+function getDoggo(url){
+    fetch(url)
+    .then(data => {
+        return data.json();
+    })
+    .then(data => {
+        breedImage.src = data.message;
+    })
+}
