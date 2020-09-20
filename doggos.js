@@ -40,6 +40,8 @@ newDoggo.addEventListener('click', addDoggo); */
 /*start doing dog excercise app*/
 
 const BREEDS_URL = 'https://dog.ceo/api/breeds/list/all';
+/*selecting 'select' element form html DOM*/
+const select = document.querySelector('.breeds');
 
 fetch(BREEDS_URL).then(response => {
     return response.json();
@@ -48,8 +50,6 @@ fetch(BREEDS_URL).then(response => {
     const breedsObject = data.message;
     const breedsArray = Object.keys(breedsObject);
 
-    /*selecting 'select' element form html DOM*/
-    const select = document.querySelector('.breeds');
 
     // looping through breeds array
     for(let i =0; i < breedsArray.length; i++){
@@ -61,3 +61,9 @@ fetch(BREEDS_URL).then(response => {
         select.appendChild(option);
     }
 })
+
+/* setting an event for changing in select element */
+select.addEventListener('change', event =>{
+    console.log(event.target.value);
+    console.log(`https://dog.ceo/api/breed/${event.target.value}/images/random`);
+});
