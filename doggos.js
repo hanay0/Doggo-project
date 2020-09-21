@@ -1,43 +1,3 @@
-// we typed breeds url in uppercase because it'll never change and it's also a constatnt
-/* const BREEDS_URL = 'https://dog.ceo/api/breeds/image/random';
-
-
-// function to add doggos pictures and we can call it more than one time
-function addDoggo(){
-    
-    // show loading spinner
-    // the word fetch refering to using [AJAX] here
-    fetch(BREEDS_URL)
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(data){
-        // this will create a new img tag
-        const img = document.createElement('img');
-        img.src = data.message;
-        img.alt = 'cute doggo';
-        img.style.maxWidth = '400px';
-        img.classList.add('little-space');
-    
-        // append the image to doggos div
-        document.querySelector('.doggos').appendChild(img);
-
-
-        // hide loading spinner
-    })
-    
-}
-
-
-
-// select add and remove doggo button
-let newDoggo = document.querySelector('.add-doggo-pic');
-
-// add an event to add button
-newDoggo.addEventListener('click', addDoggo); */
-
-
-/*start doing dog excercise app*/
 
 const BREEDS_URL = 'https://dog.ceo/api/breeds/list/all';
 /*selecting 'select' element form html DOM*/
@@ -88,7 +48,13 @@ function getDoggo(url){
     })
     .then(data => {
         breedImage.src = data.message;
-        spinner.classList.remove('show');
-        breedImage.classList.add('show');
+        // spinner.classList.remove('show');
+        // breedImage.classList.add('show');
     })
 }
+
+/*fixing loading images (until loading ends) */
+breedImage.addEventListener('load', function(){
+    spinner.classList.remove('show');
+    breedImage.classList.add('show');
+})

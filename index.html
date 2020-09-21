@@ -4,23 +4,30 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
   <title>Dogs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Grandstander&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <h1>Doggos</h1>
+    <div class="wrapper">
+        <!-- content wrapper -->
+        <div class="content-wrapper">
+            <h1>Doggos 🐶</h1>
+            <!-- adding select elements to show the different breeds of dogs -->
+            <label for="selection">Select a breed</label>
+            <select name="dogs-breeds" id="breeds" class="breeds" id="selection">Select Breed</select>
+        </div>
 
-  <div class="doggos">
-</div>
+        <!-- wrapper of the shown image -->
+    <div class="doggos">
+        <img src ="http://placecorgi.com/260/180" alt="doggo" class="dog-img show">
+    </div>
 
-<!-- adding select elements to show the different breeds of dogs -->
-<select name="dogs-breeds" id="breeds" class="breeds">Select Breed</select>
-
-<img src ="http://placecorgi.com/260/180" alt="doggo" class="dog-img show">
-
-<!-- this div contains the emoji of the animation -->
-<div class="spinner">
-    🐶
+    
+    <!-- this div contains the emoji of the spinner animation -->
+    <div class="spinner">
+        🐶
+    </div>
 </div>
   <script src="./doggos.js"></script>
 </body>

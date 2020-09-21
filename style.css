@@ -1,20 +1,83 @@
+*{
+    box-sizing:border-box;
+    margin: 0;
+    padding:0;
+}
 
-@keyframes spin{
-    to {
-        transform: rotate(360deg);
-    }
+body{
+    font-family: 'Grandstander', cursive;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    
+}
+
+.wrapper{
+    width:100%;
+}
+
+.wrapper .content-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    background-color:coral;
+    padding: 20px 0px;
+
+}
+.wrapper .content-wrapper h1{
+    font-size:5rem;
+    padding:20px 0
+}
+.wrapper .content-wrapper label{
+    font-size:1.1rem;
+    margin:5px 0
+}
+.wrapper .content-wrapper .breeds{
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    border:2px solid #333;
+    border-radius:15px;
+    font-family: 'Grandstander', cursive;
+}
+.wrapper .content-wrapper .breeds option{
+    color: coral;
+}
+
+
+
+
+.wrapper .doggos{
+    width:100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper .doggos img{
+    padding:10px 0;
+    max-height:500px;
+    border-radius:5px
 }
 
 .spinner{
     font-size:50px;
     text-align:center;
-    animation:2s spin linear 2;
+    animation:2s spin linear infinite;
     display: none;
+    padding:20px 0
 }
-
 .dog-img{
     display:none;
 }
 .show{
     display: block;
 }
+/*animation keyframe*/
+@keyframes spin{
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+
+
